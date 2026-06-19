@@ -17,7 +17,8 @@ The main objective of these labs is to demonstrate core competencies in Linux in
     *   `advanced_port_scanner.sh`: A custom, lightweight network reconnaissance script built in pure Bash to scan infrastructure ranges for open critical ports (SSH, FTP, HTTP, HTTPS).
     *   `par_ou_impar.sh`: Basic logic execution and argument validation in shell scripting.
 *   **`04-databases-labs/`**
-    *   `diagrama_entidade_associação.png`: Conceptual ERD for an automated internship allocation system, including advanced business logic constraints (RIAs).
+    * `diagrama_entidade_associação.png`: Conceptual ERD for an automated internship allocation system, including advanced business logic constraints (RIAs).
+    * `tabelas_fisicas.sql`: Database schema implementation with structural integrity constraints (`ON DELETE CASCADE`).
 
 ---
 
