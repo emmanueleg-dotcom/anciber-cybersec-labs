@@ -8,7 +8,7 @@ The system manages student enrollments, approved modules with grades, and course
 ## 📊 Entity-Relationship Diagram (ERD)
 Below is the conceptual model developed to satisfy all business rules and integrity constraints:
 
-![Entity-Relationship Diagram](diagrama_entidade_associacao.png)
+![Entity-Relationship Diagram](diagrama_entidade_associação.png)
 
 ## 🔒 Advanced Business Rules (RIAs)
 To enforce data integrity, the following Additional Integrity Rules (RIAs) were mapped:
