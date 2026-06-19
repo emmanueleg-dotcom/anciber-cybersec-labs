@@ -5,10 +5,13 @@ This laboratory covers the requirements analysis and conceptual database design 
 ## 📝 Problem Description
 The system manages student enrollments, approved modules with grades, and course editions (which define the minimum credits required to apply for an internship). Students can select up to three internship choices in order of preference. The system automatically assigns internships based on the highest GPA and preference.
 
-## 📊 Entity-Relationship Diagram (ERD)
-Below is the conceptual model developed to satisfy all business rules and integrity constraints:
+## 📊 Conceptual & Physical Design
 
-![Entity-Relationship Diagram](diagrama_entidade_associação.png)
+* **Conceptual Model:** The entity-relationship diagram below maps all business rules and entities.
+    
+    ![Entity-Relationship Diagram](diagrama_entidade_associação.png)
+
+* **Physical Model:** The complete database schema conversion is documented in the [tabelas_fisicas.sql](tabelas_fisicas.sql) script, implementing data integrity constraints such as `ON DELETE CASCADE` and `ON DELETE NO ACTION` to secure data relations.
 
 ## 🔒 Advanced Business Rules (RIAs)
 To enforce data integrity, the following Additional Integrity Rules (RIAs) were mapped:
