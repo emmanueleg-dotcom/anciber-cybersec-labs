@@ -1,13 +1,13 @@
 # Python for Cybersecurity & Automation
 
-This module contains Python tools and practical laboratory scripts developed during the specialized training at ANCiber. The focus is on implementing secure logic, input validation, and infrastructure automation.
+This module contains practical automation scripts developed during the specialized training at ANCiber, focused on data structures, basic algorithms, and File I/O operations.
 
 ## 📂 Developed Scripts
 
-* **`brute_force_protection.py`**: Simulates an authentication gateway that limits user attempts to block basic brute-force discovery.
-* **`network_port_validator.py`**: Analyzes lists of network ports, performing boundary validation to filter integers outside the legitimate TCP/UDP spectrum (0-65535).
+* **`shopping_list_automation.py`**: An interactive script that manipulates Python lists (`carrinho`), dynamically processes user input string arrays using `.split()` and `.extend()`, and handles persistent file writing (`with open`) into external text databases.
 
 ## 🛠️ Concepts Applied
-* Input sanitization and logical testing (`if/elif/else`).
-* Loop control optimization (`while`, `for`, `break`, `else`).
-* Dynamic data structures (Lists and array filtering).
+* Array manipulation and dynamic lists (`len()`, `.extend()`).
+* String parsing and sanitization (`.split()`, `.strip()`).
+* File System writing modes (`"a"` for append operations).
+* Execution delays using the `time` module.
