@@ -1,13 +1,12 @@
 # Python for Cybersecurity & Automation
 
-This module contains practical automation scripts developed during the specialized training at ANCiber, focused on data structures, basic algorithms, and File I/O operations.
+This module contains practical scripts developed during the ANCiber training sessions, focusing on data structures, user input parsing, and text file manipulation.
 
-## 📂 Developed Scripts
+## 📂 Featured Script
 
-* **`shopping_list_automation.py`**: An interactive script that manipulates Python lists (`carrinho`), dynamically processes user input string arrays using `.split()` and `.extend()`, and handles persistent file writing (`with open`) into external text databases.
+* **`shopping_list.py`**: A script that mirrors classroom laboratory work. It tracks items in an array, calculates dimensions using `len()`, parses multiple user inputs using string splitting, and records data directly into an external text file (`shopping_list.txt`).
 
 ## 🛠️ Concepts Applied
-* Array manipulation and dynamic lists (`len()`, `.extend()`).
-* String parsing and sanitization (`.split()`, `.strip()`).
-* File System writing modes (`"a"` for append operations).
-* Execution delays using the `time` module.
+* Dynamic arrays and lists (`.extend()`).
+* String manipulation (`.split()` and `.strip()`).
+* Output stream and file appending (`with open` in `"a"` mode).
