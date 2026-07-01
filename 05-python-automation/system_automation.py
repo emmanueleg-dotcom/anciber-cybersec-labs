@@ -25,7 +25,9 @@ print(os.listdir())
 print("Operation completed.")
 
 # --- STEP 3: Fetch and format system time ---
-current_time = time.strftime("%H:%M:%S", time.localtime())
+# t stores the raw local system time data
+t = time.localtime()
+current_time = time.strftime("%H:%M:%S", t)
 print("Current Time:", current_time)
 
 # --- STEP 4: Random number generation ---
