@@ -11,7 +11,8 @@ The main objective of these labs is to demonstrate core competencies in Linux in
 * **`03-bash-scripting`**: Custom lightweight network reconnaissance scripts built in pure Bash to scan critical infrastructure ports alongside basic logic execution.
 * **`04-databases-labs`**: Database schema implementation with structural integrity constraints and conceptual ERD designs.
 * **`05-python-automation`**: Practical automation scripts focusing on secure control loops, data validation, OS environment integration, and line-by-line log monitoring.
-* **`06-networking-security`**: Documentation of network architecture layer mapping, critical infrastructure protocols (DNS/DHCP), and cyber threat vector analyses.
+* **`06-networking-security`**: Documentation of network architecture layer mapping, critical infrastructure protocols (DNS/DHCP), and network device analysis.
+* **`07-ethical-hacking-labs`**: Hands-on reconnaissance frameworks (Nmap, Nikto, Gobuster), comprehensive SQL Injection analysis, and full Kioptrix privilege escalation walk-throughs.
 
 ## 🛠️ Core Skills Demonstrated
 
