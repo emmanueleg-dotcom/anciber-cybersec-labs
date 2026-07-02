@@ -14,6 +14,7 @@ The main objective of these labs is to demonstrate core competencies in Linux in
 * **`06-networking-security`**: Documentation of network architecture layer mapping, critical infrastructure protocols (DNS/DHCP), and network device analysis.
 * **`07-ethical-hacking-labs`**: Hands-on reconnaissance frameworks (Nmap, Nikto, Gobuster), comprehensive SQL Injection analysis, and full Kioptrix privilege escalation walk-throughs.
 * **`08-advanced-exploitation-labs`**: Advanced exploitation frameworks (Metasploit architecture), targeted CMS vulnerability mapping (WordPress plugins), and end-to-end SpartaBank infrastructure intrusion.
+* **`09 OSINT-social-engineeri<ng`**:Open Source Intelligence (OSINT) workflows, Google Dorking scenarios, Tor Onion Routing mechanics, Wireshark network forensics on anonymous traffic, and automated credential harvesting simulations using the Social-Engineer Toolkit (SET).
 
 ## 🛠️ Core Skills Demonstrated
 
@@ -21,3 +22,6 @@ The main objective of these labs is to demonstrate core competencies in Linux in
 * **Access Control & Hardening:** Proper application of secure permissions (`chmod`/`chown`) to enforce the principle of least privilege.
 * **Security Automation & Reconnaissance:** Developing custom tools for network discovery, data parsing, and host monitoring without external dependencies.
 * **Database & Log Auditing:** Building normalized relational models and script-based log stream filtering for incident detection.
+* **OSINT & Public Surface Auditing:** Executing passive reconnaissance through advanced search syntax (Google Hacking/Dorking) to identify structural leaks, exposed configuration panels, and sensitive files.
+* **Anonymity & Cryptographic Traffic Analysis:** Troubleshooting and parsing onion-routed (Tor) network packets using Wireshark filters to identify and verify secure TLS/SSH boundaries.
+* **Social Engineering Simulation & Mitigation:** Deploying frameworks like the Social-Engineer Toolkit (SET) to replicate credential-harvesting vectors, assess human risk, and design defense strategies (e.g., MFA, FIDO2/WebAuthn).
