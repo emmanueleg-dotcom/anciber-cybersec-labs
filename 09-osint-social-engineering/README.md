@@ -85,7 +85,6 @@ When capturing local network adapter interfaces with Wireshark during active Tor
 ### Wireshark Analysis Filter
 To isolate potential Tor handshakes and active relay connections on the network segment, the following display filter was constructed:
 
-```wireshark
 tcp.port == 9001 || tcp.port == 9050 || (tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 443)
 
 🧠 3. Human Element & Social Engineering Frameworks
@@ -109,8 +108,6 @@ The objective of this simulation is to clone a corporate login page, host it on 
 Step 1: Initialize the Framework
 Launch the tool inside Kali Linux under administrative privileges to allow network socket binding on restricted ports (such as port 80):
 
-
-```bash
 sudo setoolkit
 Step 2: Navigate the Attack Menu
 Follow the interactive prompt selection to configure the phishing delivery payload:
