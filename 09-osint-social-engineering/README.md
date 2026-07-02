@@ -18,7 +18,7 @@ Information gathering is the critical reconnaissance phase (**T1592** in the MIT
 
 ### Deep Dive: Google Dorking (Google Hacking)
 
-Google Dorking utilizes advanced search engine operators to uncover sensitive data indexations that were never meant to be public.
+**Google Dorking** utilizes advanced search engine operators to uncover sensitive data indexations that were never meant to be public.
 
 ### Key Search Operators
 
@@ -38,14 +38,14 @@ Administrators sometimes leave directory indexing enabled, exposing system backu
 site:target.com intitle:"index of" "backup" OR "old" OR "dump"
 Analysis: If misconfigured, this dork returns a browsable directory tree containing compressed files (.zip, .tar.gz) containing old source code or database structures.
 
-🔑 Scenario B: Hunting for Exposed Logins & Admin Panels
+### 🔑 Scenario B: Hunting for Exposed Logins & Admin Panels
 Exposing internal administrative portals directly to the public internet increases the external attack surface.
 
 Plaintext
 site:target.com inurl:login OR inurl:admin OR inurl:portal
 Analysis: Identifies administrative boundaries. Adding filetype:php or filetype:asp helps narrow down the underlying technology stack.
 
-⚙️ Scenario C: Extracting Configuration Files and Hardcoded Credentials
+### ⚙️ Scenario C: Extracting Configuration Files and Hardcoded Credentials
 Locating exposed environment files (.env), XML configurations, or database connection strings.
 
 Plaintext
@@ -75,18 +75,19 @@ Middle Node: Acts as a buffer. It only knows which node sent the packet and whic
 
 Exit Node: Strips the final layer of encryption and forwards the raw traffic to the destination host. It knows the final destination but is completely blind to the original client IP.
 
-Lab Analysis: Tor Traffic vs. Standard TLS Traffic (Wireshark)
+### Lab Analysis: Tor Traffic vs. Standard TLS Traffic (Wireshark)
 When capturing local network adapter interfaces with Wireshark during active Tor usage, the following network characteristics were observed:
 
-Host Obfuscation: Standard HTTP/S connections reveal domain resolutions via DNS and Server Name Indication (SNI) handshakes. Tor traffic completely obscures this; the local packet trace shows direct TCP exchanges only with the IP addresses of known Tor Directory Authorities or Guard Relays.
+* **Host Obfuscation:** Standard HTTP/S connections reveal domain resolutions via DNS and Server Name Indication (SNI) handshakes. Tor traffic completely obscures this; the local packet trace shows direct TCP exchanges only with the IP addresses of known Tor Directory Authorities or Guard Relays.
 
-Encrypted Payload: The entire communication payload is encapsulated inside standard TLS sessions (typically using non-standard port pairings like 9001 or 9050 unless running over bridges like obfs4).
+* **Encrypted Payload:** The entire communication payload is encapsulated inside standard TLS sessions (typically using non-standard port pairings like 9001 or 9050 unless running over bridges like obfs4).
 
-Wireshark Analysis Filter
+### Wireshark Analysis Filter
 To isolate potential Tor handshakes and active relay connections on the network segment, the following display filter was constructed:
 
-Snippet de código
+```wireshark
 tcp.port == 9001 || tcp.port == 9050 || (tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 443)
+
 🧠 3. Human Element & Social Engineering Frameworks
 Social engineering targets the weakest link in any corporate security chain: human psychology.
 
@@ -108,7 +109,8 @@ The objective of this simulation is to clone a corporate login page, host it on 
 Step 1: Initialize the Framework
 Launch the tool inside Kali Linux under administrative privileges to allow network socket binding on restricted ports (such as port 80):
 
-Bash
+
+```bash
 sudo setoolkit
 Step 2: Navigate the Attack Menu
 Follow the interactive prompt selection to configure the phishing delivery payload:
