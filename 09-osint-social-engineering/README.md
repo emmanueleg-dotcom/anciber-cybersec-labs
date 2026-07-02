@@ -89,27 +89,28 @@ tcp.port == 9001 || tcp.port == 9050 || (tcp.flags.syn == 1 and tcp.flags.ack ==
 
 Social engineering targets the weakest link in any corporate security chain: human psychology.
 
-Core Psychological Triggers
+**Core Psychological Triggers**
 Authority: Standardizing communications to mimic C-level executives, IT directors, or regulatory legal bodies to bypass standard verification procedures.
 
-Urgency & Scarcity: Instilling artificial time constraints (e.g., "Your active directory access will expire in 15 minutes") to force rapid decision-making under stress.
+**Urgency & Scarcity:** Instilling artificial time constraints (e.g., "Your active directory access will expire in 15 minutes") to force rapid decision-making under stress.
 
-Social Proof (Consensus): Convincing the target that their peers or team members have already completed the request (e.g., "John from Accounting already migrated his keys").
+**Social Proof (Consensus):** Convincing the target that their peers or team members have already completed the request (e.g., "John from Accounting already migrated his keys").
 
-Reciprocity: Offering a small favor or assistance to make the victim feel obligated to return the favor by disclosing system details.
+**Reciprocity:** Offering a small favor or assistance to make the victim feel obligated to return the favor by disclosing system details.
 
 ## 🎣 4. Phishing Simulation: Social-Engineer Toolkit (SET)
 
 The Social-Engineer Toolkit (SET) is an open-source framework designed to execute automated, highly targeted social engineering attacks to assess organization-wide security awareness.
 
-Step-by-Step Attack Walkthrough: Credential Harvester & Site Cloner
+**Step-by-Step Attack Walkthrough:** Credential Harvester & Site Cloner
 The objective of this simulation is to clone a corporate login page, host it on an attacker-controlled platform, and intercept submitted credentials.
 
-Step 1: Initialize the Framework
+**Step 1: Initialize the Framework**
 Launch the tool inside Kali Linux under administrative privileges to allow network socket binding on restricted ports (such as port 80):
 
 sudo setoolkit
-Step 2: Navigate the Attack Menu
+
+**Step 2: Navigate the Attack Menu**
 Follow the interactive prompt selection to configure the phishing delivery payload:
 
 Select option 1) Social-Engineering Attacks from the main menu.
@@ -120,19 +121,19 @@ Select option 3) Credential Harvester Attack Method to instruct SET to actively 
 
 Select option 2) Site Cloner to automatically mirror a target website's front-end code.
 
-Step 3: Configure Network Listeners
+**Step 3: Configure Network Listeners**
 SET prompts for the return IP address:
 
 set:webattack> IP address for the POST back in Harvester/Tabnabbing: [192.168.1.105]
 Attacker IP Configuration: Input your local network interface IP (or external WAN IP if executing a WAN-scoped test). This is where the cloned website's login form will send (POST) data.
 
-Step 4: Clone the Target Web Interface
+**Step 4: Clone the Target Web Interface**
 SET prompts for the URL to clone:
 
 set:webattack> Enter the url to clone: [https://portal.spartabank.local/login](https://portal.spartabank.local/login)
 Cloning Process: SET runs an automated scraping utility behind the scenes. It downloads the target's raw HTML, CSS structures, and script assets, modifying the <form action="..."> attributes to point directly back to the attacker's IP address on port 80.
 
-Step 5: Credential Interception & Analysis
+**Step 5: Credential Interception & Analysis**
 Once the server initializes, the attacker sends the target link to the victim (usually masked using a typosquatted domain or an active ARP/DNS spoofing vector). When the victim accesses the cloned page and submits their credentials, the console logs the transaction:
 
 YAML
@@ -144,10 +145,10 @@ Redirection Flow: Immediately after capturing the POST data, SET seamlessly redi
 
 ## 🛡️ Defenses and Mitigations
 
-Multi-Factor Authentication (MFA): Enforcing FIDO2/WebAuthn hardware keys. Traditional SMS or OTP push notifications are still vulnerable to real-time reverse-proxy phishing tools (like Evilginx2), but hardware security keys completely defeat credential harvesters because the domain binding is checked directly by the web browser.
+**Multi-Factor Authentication (MFA):** Enforcing FIDO2/WebAuthn hardware keys. Traditional SMS or OTP push notifications are still vulnerable to real-time reverse-proxy phishing tools (like Evilginx2), but hardware security keys completely defeat credential harvesters because the domain binding is checked directly by the web browser.
 
 Email Gateway Protections: Implementing SPF, DKIM, and DMARC records to prevent attackers from spoofing legitimate corporate domains in email headers.
 
 URL Sandboxing: Deploying endpoint detection agents that analyze and block newly registered domains or domains with poor reputation scores.
 
-Aviso: All tasks and simulated exercises were executed strictly within a localized sandbox environment for academic exploration, in compliance with the Portuguese Cybercrime Law framework (Lei n.º 109/2009).
+Disclaimer: All tasks and simulated exercises were executed strictly within a localized sandbox environment for academic exploration, in compliance with the Portuguese Cybercrime Law framework (Lei n.º 109/2009).
