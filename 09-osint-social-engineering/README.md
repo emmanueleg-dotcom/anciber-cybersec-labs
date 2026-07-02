@@ -35,7 +35,6 @@ Google Dorking utilizes advanced search engine operators to uncover sensitive da
 #### 📂 Scenario A: Locating Directory Listings & Unprotected Backups
 Administrators sometimes leave directory indexing enabled, exposing system backups or sensitive files.
 
-```text
 site:target.com intitle:"index of" "backup" OR "old" OR "dump"
 Analysis: If misconfigured, this dork returns a browsable directory tree containing compressed files (.zip, .tar.gz) containing old source code or database structures.
 
