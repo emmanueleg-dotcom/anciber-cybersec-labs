@@ -13,7 +13,7 @@ The main objective of these labs is to demonstrate core competencies in Linux in
 * **`05-python-automation`**: Practical automation scripts focusing on secure control loops, data validation, OS environment integration, and line-by-line log monitoring.
 * **`06-networking-security`**: Documentation of network architecture layer mapping, critical infrastructure protocols (DNS/DHCP), and network device analysis.
 * **`07-ethical-hacking-labs`**: Hands-on reconnaissance frameworks (Nmap, Nikto, Gobuster), comprehensive SQL Injection analysis, and full Kioptrix privilege escalation walk-throughs.
-* **`08-advanced-exploitation-labs`**: Advanced exploitation frameworks (Metasploit architecture), targeted CMS vulnerability mapping (WordPress plugins), and end-to-end SpartaBank infrastructure intrusion. 
+* **`08-advanced-exploitation-labs`**: Advanced exploitation frameworks (Metasploit architecture), targeted CMS vulnerability mapping (WordPress plugins), and end-to-end SpartaBank infrastructure intrusion.
 
 ## 🛠️ Core Skills Demonstrated
 
