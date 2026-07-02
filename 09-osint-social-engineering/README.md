@@ -41,14 +41,12 @@ Analysis: If misconfigured, this dork returns a browsable directory tree contain
 ### 🔑 Scenario B: Hunting for Exposed Logins & Admin Panels
 Exposing internal administrative portals directly to the public internet increases the external attack surface.
 
-Plaintext
 site:target.com inurl:login OR inurl:admin OR inurl:portal
 Analysis: Identifies administrative boundaries. Adding filetype:php or filetype:asp helps narrow down the underlying technology stack.
 
 ### ⚙️ Scenario C: Extracting Configuration Files and Hardcoded Credentials
 Locating exposed environment files (.env), XML configurations, or database connection strings.
 
-Plaintext
 site:target.com filetype:env OR filetype:xml "DB_PASSWORD"
 Analysis: Directly targets developers who accidentally committed configuration profiles to public directories or unprotected staging environments.
 
@@ -56,8 +54,7 @@ Analysis: Directly targets developers who accidentally committed configuration p
 
 Investigating overlay networks and performing network forensics to dissect anonymous routing behaviors.
 
-Tor Circuit Architecture
-Plaintext
+**Tor Circuit Architecture**
 [ Client ] --(Encrypted)--> [ Entry Node ] (Knows Client IP; Doesn't know target)
                                    |
                            (Double Encrypted)
@@ -72,16 +69,16 @@ Plaintext
 Tor Routing Mechanics
 Entry/Guard Node: Receives the packet from the client. It knows your real IP address but cannot read the encrypted payload or determine the final destination.
 
-Middle Node: Acts as a buffer. It only knows which node sent the packet and which node receives it next, preventing the Entry and Exit nodes from colluding.
+**Middle Node:** Acts as a buffer. It only knows which node sent the packet and which node receives it next, preventing the Entry and Exit nodes from colluding.
 
-Exit Node: Strips the final layer of encryption and forwards the raw traffic to the destination host. It knows the final destination but is completely blind to the original client IP.
+**Exit Node:** Strips the final layer of encryption and forwards the raw traffic to the destination host. It knows the final destination but is completely blind to the original client IP.
 
 ### Lab Analysis: Tor Traffic vs. Standard TLS Traffic (Wireshark)
 When capturing local network adapter interfaces with Wireshark during active Tor usage, the following network characteristics were observed:
 
-* **Host Obfuscation:** Standard HTTP/S connections reveal domain resolutions via DNS and Server Name Indication (SNI) handshakes. Tor traffic completely obscures this; the local packet trace shows direct TCP exchanges only with the IP addresses of known Tor Directory Authorities or Guard Relays.
+**Host Obfuscation:** Standard HTTP/S connections reveal domain resolutions via DNS and Server Name Indication (SNI) handshakes. Tor traffic completely obscures this; the local packet trace shows direct TCP exchanges only with the IP addresses of known Tor Directory Authorities or Guard Relays.
 
-* **Encrypted Payload:** The entire communication payload is encapsulated inside standard TLS sessions (typically using non-standard port pairings like 9001 or 9050 unless running over bridges like obfs4).
+**Encrypted Payload:** The entire communication payload is encapsulated inside standard TLS sessions (typically using non-standard port pairings like 9001 or 9050 unless running over bridges like obfs4).
 
 ### Wireshark Analysis Filter
 To isolate potential Tor handshakes and active relay connections on the network segment, the following display filter was constructed:
