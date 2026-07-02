@@ -52,7 +52,7 @@ Plaintext
 site:target.com filetype:env OR filetype:xml "DB_PASSWORD"
 Analysis: Directly targets developers who accidentally committed configuration profiles to public directories or unprotected staging environments.
 
-🌐 2. Darknet & Tor Traffic Analysis
+## 🌐 2. Darknet & Tor Traffic Analysis
 Investigating overlay networks and performing network forensics to dissect anonymous routing behaviors.
 
 Tor Circuit Architecture
@@ -87,7 +87,7 @@ To isolate potential Tor handshakes and active relay connections on the network 
 
 tcp.port == 9001 || tcp.port == 9050 || (tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.port == 443)
 
-🧠 3. Human Element & Social Engineering Frameworks
+## 🧠 3. Human Element & Social Engineering Frameworks
 Social engineering targets the weakest link in any corporate security chain: human psychology.
 
 Core Psychological Triggers
@@ -99,7 +99,7 @@ Social Proof (Consensus): Convincing the target that their peers or team members
 
 Reciprocity: Offering a small favor or assistance to make the victim feel obligated to return the favor by disclosing system details.
 
-🎣 4. Phishing Simulation: Social-Engineer Toolkit (SET)
+## 🎣 4. Phishing Simulation: Social-Engineer Toolkit (SET)
 The Social-Engineer Toolkit (SET) is an open-source framework designed to execute automated, highly targeted social engineering attacks to assess organization-wide security awareness.
 
 Step-by-Step Attack Walkthrough: Credential Harvester & Site Cloner
@@ -144,7 +144,7 @@ PARAM: username=j.silva@spartabank.local
 PARAM: password=Winter2026!MyPassword123
 Redirection Flow: Immediately after capturing the POST data, SET seamlessly redirects the victim back to the legitimate portal URL. To the victim, it appears as if they made a minor typing error or their session timed out, preventing immediate suspicion.
 
-🛡️ Defenses and Mitigations
+## 🛡️ Defenses and Mitigations
 Multi-Factor Authentication (MFA): Enforcing FIDO2/WebAuthn hardware keys. Traditional SMS or OTP push notifications are still vulnerable to real-time reverse-proxy phishing tools (like Evilginx2), but hardware security keys completely defeat credential harvesters because the domain binding is checked directly by the web browser.
 
 Email Gateway Protections: Implementing SPF, DKIM, and DMARC records to prevent attackers from spoofing legitimate corporate domains in email headers.
