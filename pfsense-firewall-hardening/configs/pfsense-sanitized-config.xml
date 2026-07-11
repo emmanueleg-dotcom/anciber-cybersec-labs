@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfsense>
+    <version>2.7.2-RELEASE</version>
+    <interfaces>
+        <wan>
+            <enable></enable>
+            <if>em0</if>
+            <ipaddr>192.168.136.128</ipaddr>
+            <subnet>24</subnet>
+            <gateway>WAN_DHCP</gateway>
+        </wan>
+        <lan>
+            <enable></enable>
+            <if>em1</if>
+            <ipaddr>192.168.1.1</ipaddr>
+            <subnet>24</subnet>
+        </lan>
+    </interfaces>
+    <sysctl>
+        <item>
+            <descr><![CDATA[Disable HTTP Management - Force HTTPS Only]]></descr>
+            <tune>webconfigurator.protocol</tune>
+            <value>https</value>
+        </item>
+    </sysctl>
+    <filter>
+        <rule>
+            <type>pass</type>
+            <interface>wan</interface>
+            <ipproto>inet</ipproto>
+            <protocol>tcp</protocol>
+            <destination>
+                <port>443</port>
+            </destination>
+            <descr><![CDATA[Allow HTTPS External Web Traffic to DMZ]]></descr>
+        </rule>
+        <rule>
+            <type>block</type>
+            <interface>dmz</interface>
+            <descr><![CDATA[Default Deny - Block DMZ to LAN Lateral Movement]]></descr>
+        </rule>
+    </filter>
+</pfsense>
