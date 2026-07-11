@@ -1,0 +1,28 @@
+# Automated Nmap Scanner & Bootstrap Reporting
+
+This repository contains an automated Bash scanning script designed to streamline network reconnaissance and vulnerability mapping using Nmap, generating professional, highly visual HTML reports via advanced Bootstrap stylesheets.
+
+## 🚀 Features
+* **Automated Scanning:** Executes comprehensive port discovery, service version detection (`-sV`), and Operating System fingerprinting (`-O`).
+* **Integrated Vulnerability Analysis:** Leverages the Nmap Scripting Engine (NSE), specifically utilizing the `--script vulners` script to correlate software versions with active CVEs.
+* **Professional Reporting:** Automatically parses native Nmap XML output into an aesthetic, responsive HTML dashboard using the `nmap-bootstrap.xsl` stylesheet.
+
+## 🛠️ The Script (`nmap_scan.sh`)
+```bash
+#!/bin/bash
+# Automated Nmap vulnerability scanning script for rapid security audits
+
+TARGET=$1
+OUTPUT_NAME=$2
+
+if [ -z "$TARGET" ] \vert{}\vert{} [ -z "$OUTPUT_NAME" ]; then
+    echo "Usage: ./nmap_scan.sh <IP/Subnet> <Report_Name>"
+    exit 1
+fi
+
+echo "[+] Initiating comprehensive vulnerability scan for: $TARGET"
+
+# Execute Nmap scan exporting to XML with an embedded bootstrap stylesheet reference
+nmap -sS -sV -O --script vulners --stylesheet [https://raw.githubusercontent.com/honze-net/nmap-bootstrap-xsl/master/nmap-bootstrap.xsl](https://raw.githubusercontent.com/honze-net/nmap-bootstrap-xsl/master/nmap-bootstrap.xsl) -oX reports/${OUTPUT_NAME}.xml $TARGET
+
+echo "[+] Scan completed successfully. Native report saved to reports/${OUTPUT_NAME}.xml"
